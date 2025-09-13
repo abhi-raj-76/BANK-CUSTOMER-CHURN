@@ -42,7 +42,7 @@ plt.ylabel("Count",fontsize=14) # Gives Y label/name/title
 plt.xticks([0, 1],labels=["Not Exited","Exited"]) # X-axis, each bar label.By default 0 and 1 because Exited column contains these two values only
 plt.show()
 
-#st.pyplot(figr) # Showing plot on streamlit 
+# st.pyplot(figr) # Showing plot on streamlit 
 
 # Column selection inside [...] this list we have to specify which columns we want to keep
 # Now my new DataFrame is raw_data_v which only contains these 11 columns
@@ -54,4 +54,14 @@ raw_data_v = my_raw_data[['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure',
 # hue='Exited', one color for 0 and another for 1
 g = sns.pairplot(raw_data_v, hue='Exited')
 
-st.pyplot(g.figure) # We need to change the pairgrid object to figure object for showing on streamlit
+# st.pyplot(g.figure) # We need to change the pairgrid object to figure object for showing on streamlit
+
+# Creating a list of non numeric columns 
+# sns.countplot: plot the count of occurrnces of unique vlaues in column
+# x=f: sets the x-axis to the current column(f)
+features = ['Geography', 'Gender', 'Age', 'Tenure', 'NumOfProducts',
+             'HasCrCard', 'IsActiveMember']
+for f in features:
+    figr = plt.figure()
+    ax = sns.countplot(x=f, data=my_raw_data, hue='Exited', palette="Set1")
+    # st.pyplot(figr) # use streamlit for showing all these features plot
