@@ -18,7 +18,8 @@ raw_data = pd.read_csv("Churn_Modelling.csv",encoding="latin1")
 print(raw_data.head())
 
 # Understanding Our data
-# Investigate all the elements within each feature
+# Retriving all the data for given column if unique values is lesser than 12
+# otherwise just give the column name and total unique value count
 
 for column in raw_data:
     unique_vals = np.unique(raw_data[column].fillna('0'))
@@ -27,3 +28,7 @@ for column in raw_data:
         print('The number of values for feature {} : {} -- {}'.format(column,nr_values,unique_vals))
     else:
         print('The number of values for feature {} : {}'.format(column, nr_values))
+
+# Now check for null values in all column
+
+print(raw_data.isnull().sum())
