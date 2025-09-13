@@ -31,4 +31,16 @@ for column in raw_data:
 
 # Now check for null values in all column
 
-print(raw_data.isnull().sum())
+print(raw_data.isnull().sum()) # sum() treat true as 1 and false as 0 
+
+
+fig = plt.figure(figsize=(8, 6)) # Creates a new figure object for the plot
+sns.countplot(data=raw_data, x="Exited") # Seaborn function that creates a bar chart where, data: which data frame and x: Specify column 
+plt.title("Count plot of Exited", fontsize=16) # Add the titles at the top of the plot
+plt.xlabel("Exited",fontsize=14) # Gives the X label/name/title
+plt.ylabel("Count",fontsize=14) # Gives Y label/name/title
+plt.xticks([0, 1],labels=["Not Exited","Exited"]) # X-axis, each bar label.By default 0 and 1 because Exited column contains these two values only
+plt.show()
+
+st.pyplot(fig) # Showing plot on streamlit 
+
