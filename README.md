@@ -1,31 +1,43 @@
-# 📊 ML + DL + Streamlit Project
+# Bank Customer Churn Prediction Dashboard
 
-This project demonstrates how to build a **Machine Learning / Deep Learning pipeline** with interactive dashboards using **Streamlit** and **Plotly**.  
+This project predicts bank customer churn (whether a customer will leave the bank) using Machine Learning (Decision Trees, XGBoost) and provides an interactive Streamlit dashboard for visualizing insights and making predictions.  
 
 ---
 
-## 🧰 **Libraries Used & Their Purpose**
+## Dataset
+
+We are using the Bank Customer Churn Prediction Dataset from Kaggle:  
+`/kaggle/input/bank-customer-churn-prediction-dataset/Churn_Modelling.csv`
+
+This dataset contains:
+- RowNumber, CustomerId, Surname (Identifiers)
+- CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary
+- Exited (Target: 1 = Churn, 0 = Stay)
+
+---
+
+## Libraries Used & Their Purpose
 
 | Library / Module | Purpose |
 |------------------|--------|
-| **pandas** | Load, clean, and manipulate tabular data (CSV, Excel) |
-| **numpy** | Fast mathematical operations and array manipulation |
-| **seaborn** | Statistical visualizations (heatmaps, pairplots) |
-| **matplotlib.pyplot** | Base library for plots (histograms, bar charts, etc.) |
-| **plotly.express** | Create interactive charts (zoom, hover, filter) |
-| **streamlit** | Build an interactive dashboard/web app for ML |
-| **sklearn.tree.DecisionTreeClassifier** | Simple ML classifier for prediction |
-| **sklearn.model_selection.train_test_split** | Split dataset into training and test sets |
-| **sklearn.preprocessing.MinMaxScaler** | Normalize features (scale values between 0-1) |
-| **pickle** | Save and load ML models for reusability |
-| **xgboost** *(install separately)* | Advanced gradient boosting algorithm for better accuracy |
-| **graphviz** *(install separately)* | Visualize decision trees and graphs |
+| pandas | Load, clean, and manipulate dataset |
+| numpy | Math operations and array manipulation |
+| seaborn | Statistical visualizations (heatmap for feature correlation) |
+| matplotlib.pyplot | Static plots (histograms, bar charts) |
+| plotly.express | Interactive charts (zoom, hover, filter) |
+| streamlit | Build interactive dashboard for churn analysis |
+| sklearn.tree.DecisionTreeClassifier | Train ML model for churn prediction |
+| sklearn.model_selection.train_test_split | Split data into training/testing sets |
+| sklearn.preprocessing.MinMaxScaler | Normalize features for ML model |
+| pickle | Save and load trained model |
+| xgboost (install separately) | More accurate boosting algorithm |
+| graphviz (install separately) | Visualize decision trees |
 
 ---
 
-## 📦 **Installation**
+## Installation
 
-Install the required libraries before running the project:
+Install the dependencies:
 
 ```bash
 pip install pandas numpy seaborn matplotlib scikit-learn plotly streamlit xgboost graphviz
